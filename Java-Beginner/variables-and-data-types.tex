@@ -1,0 +1,176 @@
+\documentclass[a4paper]{article}
+
+% Use Package
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{fontspec}
+\usepackage{geometry}
+\usepackage{layout}
+\usepackage{titling}
+\usepackage{listings}  
+
+% Define Commands
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}%
+}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+% Initial Set Up
+\setmainfont{Arial}
+\lstdefinestyle{codeStyle}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=Java,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{purple!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+}
+\lstset{ 
+  backgroundcolor=\color{white}, 
+  breakatwhitespace=false,         
+  breaklines=true,              
+  captionpos=b,                    
+  commentstyle=\color{mygreen},    
+  deletekeywords={...},            
+  escapeinside={\%*}{*)},          
+  extendedchars=true,              
+  frame=single,	                 
+  keepspaces=true,                
+  keywordstyle=\color{blue},      
+  language=Java,                  
+  otherkeywords={*,...},           
+  numbers=left,                    
+  numbersep=5pt,                   
+  numberstyle=\color{gray},
+  rulecolor=\color{white},         
+  showspaces=false,             
+  showstringspaces=false,          
+  showtabs=false,                  
+  stepnumber=2,                    
+  stringstyle=\color{mymauve},     
+  tabsize=2,	                   
+  title=\lstname,                   
+  escapechar=@,
+  style=codeStyle
+}
+
+\title{Variables and Data Types}
+\subtitle{Java Beginner}
+\date{} 
+\author{Libre Education}
+\begin{document}
+\maketitle
+
+
+\begin{figure}[b]
+\includegraphics{BY-SA}
+\centering
+\end{figure}
+
+\newpage
+
+\section*{Variables}
+
+A variable is place set aside in your computer’s memory to store a data value. The variable has a data type assigned to it to show what kind of data is being stored in the variable.
+
+\section*{Data Types}
+
+Data types represent the type of data that is being stored in a variable. They can be defined by the user or built into the language, these are called primitive data types. 
+\\\\
+e.g. String is a data type that stores a string of characters, for example a sentence.
+
+\subsection*{Primitive Data Types}
+A primitive data type is a data type that is predefined or ‘built-into’ the language. There are eight primitive data types in Java:
+\begin{enumerate}
+
+\item \textbf{int} - Stores integers. Minimum value of \(-2^{31}\). Maximum value of \(2^{31}-1\). Default value is 0
+
+\item \textbf{double} - Stores decimals. Minimum value of \(2^{-1074}\). Maximum value of (2 to \(2^{-52})·2^{1023}\). Default value is 0.0d
+
+\item \textbf{char} - Stores all unicode characters. Minimum value of 0 ('\textbackslash u0000'). Maximum value of 65,535 ('\textbackslash uffff'). Default value is 0 ('\textbackslash u0000')
+
+\item \textbf{boolean} - Stores either a ‘true’ or ‘false’ value. Represents 1 bit of information. Default value is ‘false’
+
+\item \textbf{long} - Stores a wider range of integers than int. Minimum value of -263. Maximum value of \(263^{-1}\). Default value is 0L
+
+\item \textbf{short} - Stores a smaller range integers than int. Minimum value of -215. Maximum value of 215-1. Default value is 0
+
+\item \textbf{byte} - Stores 1 byte of data. Minimum value of \(-128^{1}\). Maximum value of 127. Default value is 0
+
+\item \textbf{float} - Stores floating point decimal. Minimum value of \( 2^{-149}\). Maximum value of (2 to \(2^{-23})·2^{127}\). Default value is 0f
+
+\end{enumerate}
+
+\newpage
+
+\section*{Declaring a Variable}
+
+\subsection*{Syntax}
+\begin{lstlisting}
+data_type variable_name = value;
+\end{lstlisting}
+
+\subsubsection*{Example}
+\begin{lstlisting}
+public class Main {
+
+   public static void main(String[] args) {
+
+       String st = "Hello World";
+       System.out.println(st);
+
+       //Eight Primitive Data Types
+       int i = 62;
+
+       double d = 3.14159d;
+       double d2 = 4.20341;
+
+       char c1 = 'A';
+       char c2 = 65;
+       char c3 = '\u0041';
+
+       boolean bo = true;
+
+       long L = 68364278382738L;
+
+       short sh = 82;
+
+       byte b1 = 3;
+       byte b2 = 'A';
+
+       float f = 2.4f;
+
+   }
+}
+\end{lstlisting}
+
+\newpage
+
+\section*{Other Resources}
+\begin{enumerate}
+\item The Java Tutorials (docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html)
+\item TutorialsPoint (www.tutorialspoint.com/java/java\_basic\_datatypes.htm)
+\item Java For Dummies (www.dummies.com/how-to/content/the-eight-data-types-of-java.html)
+\item Java Programming - WikiBooks (en.wikibooks.org/wiki/Java\_Programming/Primitive\_Types)
+\item w3Resource (www.w3resource.com/java-tutorial/java-premitive-data-type.php)
+\item CMU (www.cs.cmu.edu/~mrmiller/15-110/Handouts/primitiveData.pdf)
+\item TutorialsCollection (www.tutorialscollection.com/java-data-types-primitive-data-types-in-java)
+\item ZetCode (zetcode.com/lang/java/datatypes)
+\end{enumerate}
+
+
+\end{document}
