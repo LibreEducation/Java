@@ -1,0 +1,188 @@
+\documentclass[a4paper]{article}
+
+% Use Package
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{fontspec}
+\usepackage{geometry}
+\usepackage{layout}
+\usepackage{titling}
+\usepackage{listings}  
+
+% Define Commands
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}%
+}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+% Initial Set Up
+\setmainfont{Arial}
+\lstdefinestyle{codeStyle}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=Java,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{purple!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+}
+\lstset{ 
+  backgroundcolor=\color{white}, 
+  breakatwhitespace=false,         
+  breaklines=true,              
+  captionpos=b,                    
+  commentstyle=\color{mygreen},    
+  deletekeywords={...},            
+  escapeinside={\%*}{*)},          
+  extendedchars=true,              
+  frame=single,	                 
+  keepspaces=true,                
+  keywordstyle=\color{blue},      
+  language=Java,                  
+  otherkeywords={*,...},           
+  numbers=left,                    
+  numbersep=5pt,                   
+  numberstyle=\color{gray},
+  rulecolor=\color{white},         
+  showspaces=false,             
+  showstringspaces=false,          
+  showtabs=false,                  
+  stepnumber=2,                    
+  stringstyle=\color{mymauve},     
+  tabsize=2,	                   
+  title=\lstname,                   
+  escapechar=@,
+  style=codeStyle
+}
+
+\title{Operators}
+\subtitle{Java Beginner}
+\date{} 
+\author{Libre Education}
+\begin{document}
+\maketitle
+
+
+\begin{figure}[b]
+\includegraphics{BY-SA}
+\centering
+\end{figure}
+
+\newpage
+
+\section*{Operators}
+
+An operator is a symbol that performs a specific function to one or more values.
+
+\section*{Types of Operators}
+Operators are grouped by what kind of operation they perform.
+
+\subsection*{Arithmetic Operators}
+Arithmetic operators perform typical mathematical functions to two values.
+\begin{enumerate}
+
+\item = (Simple Assignment) - Assigns the value on the right to the value on the left
+
+\item += (Add And Assign) - Adds the two values together and then assigns the value on the left to the result
+
+\item -= (Subtract And Assign) - Subtracts the right value from the left value and then assigns the value on the left to the result
+
+\item *= (Multiply And Assign) - Multiplies the values together and then assigns the value on the left to the result
+
+\item /= (Divide And Assign) - Divided the value on the left by the value on the right and then assigns the value on the left to the result
+
+\end{enumerate}
+
+\subsubsection*{Unary Operators}
+Unary operators require and perform a function to one value.
+
+\begin{enumerate}
+
+\item + (Unary Plus)
+
+\item - (Unary Minus)
+
+\item + + (Increment) - Increases the value by 1
+
+\item - - (Decrement) - Decreases the value by 1
+
+\item ! (Logical Compliment) - Inverts the value of a boolean
+
+\end{enumerate}
+
+\subsection*{Equality And Relational Operators}
+Equality and Relational operators check for a condition and return a boolean but do not manipulate values
+\begin{enumerate}
+
+\item == (Equal To) - Returns true if the two values are equal to each other
+
+\item != (Not Equal To) - Returns true if the two values are not equal to each other
+
+\item > (Greater Than) - Returns true if the value on the left is greater than the value on the right
+
+\item < (Less Than) - Returns true if the value on the left is less than the value on the right
+
+\item >= (Greater Than or Equal To) - Returns true if the value on the left is greater than or equal to the value on the right
+
+\item <= (Less Than or Equal To) - Returns true of the value on the left is less than or equal to the value on the right
+
+\end{enumerate}
+
+\subsection*{Conditional Operators}
+Conditional operators check two statements or expressions
+\begin{enumerate}
+
+\item \&\& (Conditional AND) - Returns true if both statements are true
+
+\item || (Conditional OR) - Returns true if at least one of the statements are true
+
+\end{enumerate}
+
+\subsection*{Bitwise and Bitshift Operators}
+Bitwise and Bitshift operators manipulate values at the byte level. They take place between each parallel pair of bits in the value
+\begin{enumerate}
+
+\item $\sim$ (Unary Bitwise Complement) - Inverts each bit in the value
+r
+
+\item \& (Bitwise AND) - If both corresponding bits are 1, the result is 1
+
+\item | (Bitwise Inclusive OR) - If either of the corresponding bits are 1, the result is 1
+
+\item \string^ (Bitwise Exclusive OR) - If both of the corresponding bits are 1, the result is 1
+
+\end{enumerate}
+
+
+\newpage
+
+\section*{Other Resources}
+\begin{enumerate}
+
+\item The Java Tutorials (docs.oracle.com/javase/tutorial/java/nutsandbolts/operators.html)
+
+\item TutorialsPoint (www.tutorialspoint.com/java/java\_basic\_operators.htm) \\ 
+
+Bitwise and Bitshift Operators
+
+\item Rose India (www.roseindia.net/java/master-java/bitwise-bitshift-operators.shtml)
+
+\item Vipan (vipan.com/htdocs/bitwisehelp.html)
+
+\end{enumerate}
+
+
+\end{document}
