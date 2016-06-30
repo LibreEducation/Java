@@ -1,0 +1,221 @@
+\documentclass[a4paper]{article}
+
+% Use Package
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{fontspec}
+\usepackage{geometry}
+\usepackage{layout}
+\usepackage{titling}
+\usepackage{listings}  
+
+% Define Commands
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}%
+}
+
+% Initial Set Up
+\setmainfont{Arial}
+\lstdefinestyle{codeStyle}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=Java,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{purple!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+}
+\lstset{ 
+  backgroundcolor=\color{white}, 
+  breakatwhitespace=false,         
+  breaklines=true,              
+  captionpos=b,                    
+  commentstyle=\color{green},    
+  deletekeywords={...},            
+  escapeinside={\%*}{*)},          
+  extendedchars=true,              
+  frame=single,	                 
+  keepspaces=true,                
+  keywordstyle=\color{blue},      
+  language=Java,                  
+  otherkeywords={*,...},           
+  numbers=left,                    
+  numbersep=5pt,                   
+  numberstyle=\color{gray},
+  rulecolor=\color{white},         
+  showspaces=false,             
+  showstringspaces=false,          
+  showtabs=false,                  
+  stepnumber=1,                    
+  stringstyle=\color{mauve},     
+  tabsize=1,	                   
+  title=\lstname,                   
+  escapechar=@,
+  style=codeStyle
+}
+
+\title{Arrays}
+\subtitle{Java Beginner}
+\date{} 
+\author{Libre Education}
+\begin{document}
+\maketitle
+
+
+\begin{figure}[b]
+\includegraphics{BY-SA}
+\centering
+\end{figure}
+
+\newpage
+
+\section*{Arrays}
+
+An array is a data structure that can hold multiple values of the same data type. It is therefore considered as a container object.
+
+\section*{Declaring An Array}
+When declaring an array, like any variable the data type has to be specified as well as the maximum number of values that the array can contain.
+
+\subsubsection*{Syntax}
+\begin{lstlisting}
+data_type[] array_name = new data_type[number_of_values];
+\end{lstlisting}
+
+\subsubsection*{Example}
+\begin{lstlisting}
+int[] arr = new int[5]; // An array that can hold 5 int values
+\end{lstlisting}
+
+\section*{Indexes}
+Each position in the array is called an index. Indexes differ from regular counting as they start from 0. So an array that can hold 5 values would have a starting index of 0 and an ending index of 4.
+
+\section*{Assigning Values}
+
+\subsection*{Assigning values to a specific index}
+
+\subsubsection*{Syntax}
+\begin{lstlisting}
+array_name[index] = value;
+\end{lstlisting}
+
+\subsubsection*{Example}
+\begin{lstlisting}
+int[] arr = new int[5];
+arr[0] = 4; // Assigning a value to the first (0) index
+arr[1] = 8; // Assigning a value to the second (1) index
+arr[2] = 7; // Assigning a value to the third (2) index
+\end{lstlisting}
+
+\subsection*{Assigning values at declaration}
+When assigning values at declaration, the number of values assigned becomes the number of values the array can contain.
+
+\subsubsection*{Syntax}
+\begin{lstlisting}
+data_type[] array_name = {value, value, value};
+\end{lstlisting}
+
+\subsubsection*{Example}
+\begin{lstlisting}
+int[] arr = {4, 8, 7 , 2, 3};
+// An array that can hold 5 values, with 5 values assigned to each index
+\end{lstlisting}
+
+\section*{Accessing Values}
+To access a specific value in an array, the value is referred to by stating the array name and the index at which the value is located.
+
+\subsubsection*{Syntax}
+\begin{lstlisting}
+array_name[index];
+\end{lstlisting}
+
+\subsubsection*{Example}
+\begin{lstlisting}
+int[] arr = {4, 8, 7 , 2, 3};
+System.out.println(arr[2]);
+// Output: 7
+\end{lstlisting}
+
+\section*{Manipulating Arrays}
+There are many manipulations that can be applied to arrays as well many methods (functions). The following is a list of the most common methods and manipulations made to arrays.
+
+\subsection*{Convert an array to string}
+\begin{lstlisting}
+int[] arr = {4, 8, 7};
+String stringArr = Arrays.toString(arr);
+System.out.println(stringArr);
+// Output: [4, 8, 7]
+\end{lstlisting}
+
+\subsection*{Sort in ascending order}
+\begin{lstlisting}
+int[] arr = {8, 2, 5, 1};
+Arrays.sort(arr);
+System.out.println(Arrays.toString(arr));
+// Output: [1, 2, 5, 8]
+\end{lstlisting}
+
+\subsection*{Check if an array contains a value}
+\begin{lstlisting}
+String[] stringArr = {"a", "b", "c"};
+boolean containsValue = Arrays.asList(stringArr).contains("a");
+System.out.println(containsValue);
+// Output: true
+\end{lstlisting}
+
+\section*{Multi-Dimensional Arrays}
+Multi-dimensional arrays can be considered as an array of arrays where elements can themselves be an array.
+
+\subsection*{Two dimensional arrays}
+When using two dimensional arrays it can often be easier to think of the array as a grid where the first bracket specifies the row and the second bracket specifies the column thus giving the “coordinates” of a specific value.
+
+\subsubsection*{Syntax}
+\begin{lstlisting}
+data_type[][] array_name = {1D_Array, 1D_Array, 1D_Array};
+\end{lstlisting}
+
+\subsubsection*{Example}
+\begin{lstlisting}
+int[][] twoDimArr = { {7, 4, 1} , 
+    				{2, 5, 9, 3} };
+
+System.out.println(twoDimArr[1][0]);
+// Output: 2
+System.out.println(Arrays.toString(twoDimArr[1]));
+// Output: [2, 5, 9]
+\end{lstlisting}
+
+\subsubsection*{Note}
+Using just one bracket will refer the whole array. E.g. array\_name[index]
+
+
+\newpage
+
+\section*{Other Resources}
+\begin{enumerate}
+
+\item The Java Tutorials (docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html)
+
+\item TutorialsPoint (www.tutorialspoint.com/java/java\_arrays.htm) 
+
+\item Java Programming - WikiBooks (en.wikibooks.org/wiki/Java\_Programming/Arrays) 
+
+\item Princeton (introcs.cs.princeton.edu/java/14array)
+
+\item ZetCode (zetcode.com/lang/java/arrays)
+
+\item w3Resource (www.w3resource.com/java-tutorial/java-arrays.php)
+
+\end{enumerate}
+
+
+\end{document}
