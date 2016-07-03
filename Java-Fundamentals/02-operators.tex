@@ -56,7 +56,7 @@
   showspaces=false,             
   showstringspaces=false,          
   showtabs=false,                  
-  stepnumber=2,                    
+  stepnumber=1,                    
   stringstyle=\color{mauve},     
   tabsize=1,	                   
   title=\lstname,                   
@@ -102,7 +102,7 @@ Arithmetic operators perform typical mathematical functions to two values.
 
 \end{enumerate}
 
-\subsubsection*{Unary Operators}
+\subsection*{Unary Operators}
 Unary operators require and perform a function to one value.
 
 \begin{enumerate}
@@ -135,6 +135,8 @@ Equality and Relational operators check for a condition and return a boolean but
 
 \item <= (Less Than or Equal To) - Returns true of the value on the left is less than or equal to the value on the right
 
+\item instanceof (Instance of) - Compares an object and a class. Returns true if the object provided on the left is an instance of the class provided on the right
+
 \end{enumerate}
 
 \subsection*{Conditional Operators}
@@ -160,6 +162,23 @@ Bitwise and Bitshift operators manipulate values at the byte level. They take pl
 \item \string^ (Bitwise Exclusive OR) - If both of the corresponding bits are 1, the result is 1
 
 \end{enumerate}
+
+\subsection*{Ternary Operator}
+? : - The ternary operator provides a shorter way to write and if...then...else statement and takes three operands: an expression and two values. If the expression evaluates to true the first value is returned and if the expression evaluates to false the second value is returned.
+
+\subsubsection*{Syntax}
+\begin{lstlisting}
+result = expression ? value1 : value2;
+\end{lstlisting}
+
+\subsubsection*{Example}
+\begin{lstlisting}
+boolean expression = true;
+String result = expression ? "The expression is true" : "The expression is false";
+System.out.println(result);
+// Output: The expression is true
+
+\end{lstlisting}
 
 
 \newpage
