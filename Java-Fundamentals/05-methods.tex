@@ -1,0 +1,292 @@
+\documentclass[a4paper]{article}
+
+% Packages
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{helvet}
+\usepackage{geometry}
+\usepackage{layout}
+\usepackage{titling}
+\usepackage{listings}
+
+% Commands
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}%
+}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+% Set Up
+\lstdefinestyle{codeStyle}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=Java,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{purple!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+}
+\lstset{
+  backgroundcolor=\color{white},
+  breakatwhitespace=false,
+  breaklines=true,
+  captionpos=b,
+  commentstyle=\color{green},
+  deletekeywords={...},
+  escapeinside={\%*}{*)},
+  extendedchars=true,
+  frame=single,
+  keepspaces=true,
+  keywordstyle=\color{blue},
+  language=Java,
+  otherkeywords={*,...},
+  numbers=left,
+  numbersep=5pt,
+  numberstyle=\color{gray},
+  rulecolor=\color{white},
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+  stepnumber=1,
+  stringstyle=\color{mauve},
+  tabsize=2,
+  title=\lstname,
+  escapechar=@,
+  style=codeStyle
+}
+
+% Document start
+\title{Methods}
+\subtitle{Java Fundamentals}
+\date{}
+\author{Libre Education}
+\begin{document}
+\maketitle
+
+
+\begin{figure}[b]
+\includegraphics{BY-SA}
+\centering
+\end{figure}
+
+\newpage
+
+\section*{Methods}
+
+A method is a block of a code that can be called to perform a specific function, it can have values passed to it and return a value. The advantage of using methods is that it allows you to execute the same block of code any number of times from anywhere in your program by calling it with just one line, thus eliminating the need to rewrite the same code multiple times.
+
+\subsection*{Structure of a Methods}
+A method has a number of different components that are required to it, although some are optional:
+
+\begin{enumerate}
+
+\item Modifiers - includes the access and non-access modifiers
+\item Return Type - the type of data that the method will return. If the method will not return any data the void keyword is used
+\item Method Name - the name that will be used when calling the method
+\item Parameters - the parameters are the values that need to be given or passed to the method when it is called, parameters are optional
+\item Method Body - the code that will be executed when the method is called
+\item Return Statement - this statement returns a value from the method when it is called
+
+\end{enumerate}
+
+
+\subsubsection*{Access Modifiers}
+
+Access Modifiers set the access level for a method. The access level essentially describes where the method can be called from. There are three types of access modifier:
+
+\begin{enumerate}
+
+\item Public (public) - accessible to the whole program
+\item Protected (protected) - accessible to the package and all sub classes
+\item Private (private) - accessible to the class only 
+
+\end{enumerate}
+
+\subsubsection*{Non-Access Modifiers}
+The non-access modifiers provide a set of miscellaneous functionality, which will be discussed at a later point:
+
+\begin{enumerate}
+\item Static (static)
+\item Final (final)
+\item Abstract (abstract)
+\item Synchronized (synchronized)
+\item Volatile (volatile)
+\end{enumerate}
+
+
+\subsubsection*{Syntax}
+\begin{lstlisting}
+modifiers return_type method_name(data_type parameter_name){
+   // Code to execute when the method is called
+   return return_value;
+}
+\end{lstlisting}
+
+\subsubsection*{Example}
+\begin{lstlisting}
+public static void printSomething(String stringToPrint){
+   System.out.println(stringToPrint);
+}
+\end{lstlisting}
+
+or
+
+\begin{lstlisting}
+public static int addSomething(int integer){
+   integer++;
+   return integer;
+}
+// An int that is one more than what is given public static void printSomething(String stringToPrint){
+   System.out.println(stringToPrint);
+}
+
+public static int addSomething(int integer){
+   integer++;
+   return integer;
+}as a parameter is returned
+\end{lstlisting}
+
+\section*{Calling Methods}
+
+To use a method it needs to be called. The process of calling a method itself is simple but often has many variations in context depending on number of factors such as if it returns a value or if it is located in the same class or package that is being called from. The following example make use of these two methods:
+
+\begin{lstlisting}
+public static void printSomething(String stringToPrint){
+   System.out.println(stringToPrint);
+}
+
+public static int addSomething(int integer){
+   integer++;
+   return integer;
+}
+\end{lstlisting}
+
+\subsection*{Calling (void) methods}
+When calling a void method that is declared in the same class that it is being called from, just the method name has to be stated.
+
+\subsubsection*{Syntax}
+\begin{lstlisting}
+method_name(parameter);
+\end{lstlisting}
+
+\subsubsection*{Example}
+\begin{lstlisting}
+printSomething("Hello World");
+\end{lstlisting}
+
+\subsection*{Calling methods with return statements}
+When calling a method the value that is returned can be used in multiple ways, such as assigning it to a variable or checking the value with an if statement.
+
+\subsubsection*{Syntax}
+\begin{lstlisting}
+data_type variable_name = method_name(parameter);
+\end{lstlisting}
+
+or
+
+\begin{lstlisting}
+if(method_name(parameter) condition){
+   // Code to execute
+}
+\end{lstlisting}
+
+
+\subsubsection*{Example}
+\begin{lstlisting}
+int i = addSomething(5);
+System.out.println(i);
+// Output: 6
+\end{lstlisting}
+
+or
+
+\begin{lstlisting}
+if(addSomething(5) > 4){
+   System.out.println("The value returned is greater than 4");
+}
+\end{lstlisting}
+
+\subsection*{Calling methods from other classes}
+When calling a method from another class, how it is called depends on whether the method is static or non-static (i.e. it has no static modifier). If the method is static it can simply be called by using the class name and the method name, if the method is non-static an object of the class needs to be created. The method can then be called using the object. The following examples use the printSomething method located in the Printer class.
+
+\subsubsection*{Syntax}
+From a static context
+\begin{lstlisting}
+class_name.method_name(parameters);
+\end{lstlisting}
+
+or
+\\From a non-static context
+\begin{lstlisting}
+class_name object_name = new class_name();
+object_name.method_name(parameters);
+\end{lstlisting}
+
+
+\subsubsection*{Example}
+From a static context
+\begin{lstlisting}
+Printer.printSomething("Hello World");
+\end{lstlisting}
+
+or
+\\From a non-static context
+\begin{lstlisting}
+Printer printerObject = new Printer();
+printerObject.printSomething("Hello World");
+\end{lstlisting}
+
+\subsection*{Calling methods from other packages}
+When calling a method from a class located in a different package, relative to where the method is being called, it can either be called by using the fully qualified name of the method, which includes the package and class or by importing the class or the entire package using the import keyword. The import statement is located above the class declaration.
+The following examples use the printSomething method of the Printer class which in located in the utils package. In this case  printSomething is a static method.
+
+\subsubsection*{Syntax}
+Using fully qualified name
+\begin{lstlisting}
+package_name.class_name.method_name(parameters);
+\end{lstlisting}
+\newpage
+or
+\\Using import statement
+\begin{lstlisting}
+import package_name.class_name;
+class_name.method_name(parameters);
+\end{lstlisting}
+
+
+\subsubsection*{Example}
+Using fully qualified name
+\begin{lstlisting}
+utils.Printer.printSomething("Hello World");
+\end{lstlisting}
+
+or
+\\Using import statement
+\begin{lstlisting}
+import utils.Printer;
+...
+Printer.printSomething("Hello World");
+\end{lstlisting}
+
+\newpage
+
+\section*{Other Resources}
+\begin{enumerate}
+\item The Java Tutorials (docs.oracle.com/javase/tutorial/java/javaOO/methods.html) 
+\item TutorialsPoint (www.tutorialspoint.com/java/java\_methods.htm) 
+\item Home \& Learn (www.homeandlearn.co.uk/java/java\_methods.html) 
+\item How To Program With Java (howtoprogramwithjava.com/what-is-a-method-in-java/) 
+\end{enumerate}
+
+
+\end{document}

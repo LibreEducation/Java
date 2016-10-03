@@ -1,18 +1,18 @@
 \documentclass[a4paper]{article}
 
-% Use Package
+% Packages
 \usepackage[english]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage[colorinlistoftodos]{todonotes}
-\usepackage{fontspec}
+\usepackage{helvet}
 \usepackage{geometry}
 \usepackage{layout}
 \usepackage{titling}
-\usepackage{listings}  
+\usepackage{listings}
 
-% Define Commands
+% Commands
 \newcommand{\subtitle}[1]{%
   \posttitle{%
     \par\end{center}
@@ -20,8 +20,9 @@
     \vskip0.5em}%
 }
 
-% Initial Set Up
-\setmainfont{Arial}
+\renewcommand{\familydefault}{\sfdefault}
+
+% Set Up
 \lstdefinestyle{codeStyle}{
   belowcaptionskip=1\baselineskip,
   breaklines=true,
@@ -35,38 +36,39 @@
   identifierstyle=\color{blue},
   stringstyle=\color{orange},
 }
-\lstset{ 
-  backgroundcolor=\color{white}, 
-  breakatwhitespace=false,         
-  breaklines=true,              
-  captionpos=b,                    
-  commentstyle=\color{green},    
-  deletekeywords={...},            
-  escapeinside={\%*}{*)},          
-  extendedchars=true,              
-  frame=single,	                 
-  keepspaces=true,                
-  keywordstyle=\color{blue},      
-  language=Java,                  
-  otherkeywords={*,...},           
-  numbers=left,                    
-  numbersep=5pt,                   
+\lstset{
+  backgroundcolor=\color{white},
+  breakatwhitespace=false,
+  breaklines=true,
+  captionpos=b,
+  commentstyle=\color{green},
+  deletekeywords={...},
+  escapeinside={\%*}{*)},
+  extendedchars=true,
+  frame=single,
+  keepspaces=true,
+  keywordstyle=\color{blue},
+  language=Java,
+  otherkeywords={*,...},
+  numbers=left,
+  numbersep=5pt,
   numberstyle=\color{gray},
-  rulecolor=\color{white},         
-  showspaces=false,             
-  showstringspaces=false,          
-  showtabs=false,                  
-  stepnumber=1,                    
-  stringstyle=\color{mauve},     
-  tabsize=1,	                   
-  title=\lstname,                   
+  rulecolor=\color{white},
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+  stepnumber=1,
+  stringstyle=\color{mauve},
+  tabsize=2,
+  title=\lstname,
   escapechar=@,
   style=codeStyle
 }
 
+% Document start
 \title{Arrays}
 \subtitle{Java Fundamentals}
-\date{} 
+\date{}
 \author{Libre Education}
 \begin{document}
 \maketitle
@@ -81,10 +83,12 @@
 
 \section*{Arrays}
 
-An array is a data structure that can hold multiple values of the same data type. It is therefore considered as a container object.
+An array is a data structure that can hold multiple values of the same data
+type. It is therefore considered as a container object.
 
 \section*{Declaring An Array}
-When declaring an array, like any variable the data type has to be specified as well as the maximum number of values that the array can contain.
+When declaring an array, like any variable the data type has to be specified
+as well as the maximum number of values that the array can contain.
 
 \subsubsection*{Syntax}
 \begin{lstlisting}
@@ -97,7 +101,9 @@ int[] arr = new int[5]; // An array that can hold 5 int values
 \end{lstlisting}
 
 \section*{Indexes}
-Each position in the array is called an index. Indexes differ from regular counting as they start from 0. So an array that can hold 5 values would have a starting index of 0 and an ending index of 4.
+Each position in the array is called an index. Indexes differ from regular
+counting as they start from 0. So an array that can hold 5 values would have a
+starting index of 0 and an ending index of 4.
 
 \section*{Assigning Values}
 
@@ -117,7 +123,8 @@ arr[2] = 7; // Assigning a value to the third (2) index
 \end{lstlisting}
 
 \subsection*{Assigning values at declaration}
-When assigning values at declaration, the number of values assigned becomes the number of values the array can contain.
+When assigning values at declaration, the number of values assigned becomes the
+number of values the array can contain.
 
 \subsubsection*{Syntax}
 \begin{lstlisting}
@@ -131,7 +138,8 @@ int[] arr = {4, 8, 7 , 2, 3};
 \end{lstlisting}
 
 \section*{Accessing Values}
-To access a specific value in an array, the value is referred to by stating the array name and the index at which the value is located.
+To access a specific value in an array, the value is referred to by stating the
+array name and the index at which the value is located.
 
 \subsubsection*{Syntax}
 \begin{lstlisting}
@@ -146,7 +154,9 @@ System.out.println(arr[2]);
 \end{lstlisting}
 
 \section*{Manipulating Arrays}
-There are many manipulations that can be applied to arrays as well many methods (functions). The following is a list of the most common methods and manipulations made to arrays.
+There are many manipulations that can be applied to arrays as well many methods
+(functions). The following is a list of the most common methods and
+manipulations made to arrays.
 
 \subsection*{Convert an array to string}
 \begin{lstlisting}
@@ -173,10 +183,13 @@ System.out.println(containsValue);
 \end{lstlisting}
 
 \section*{Multi-Dimensional Arrays}
-Multi-dimensional arrays can be considered as an array of arrays where elements can themselves be an array.
+Multi-dimensional arrays can be considered as an array of arrays where elements
+can themselves be an array.
 
 \subsection*{Two dimensional arrays}
-When using two dimensional arrays it can often be easier to think of the array as a grid where the first bracket specifies the row and the second bracket specifies the column thus giving the ìcoordinatesî of a specific value.
+When using two dimensional arrays it can often be easier to think of the array
+as a grid where the first bracket specifies the row and the second bracket
+specifies the column thus giving the ‚Äúcoordinates‚Äù of a specific value.
 
 \subsubsection*{Syntax}
 \begin{lstlisting}
@@ -185,7 +198,7 @@ data_type[][] array_name = {1D_Array, 1D_Array, 1D_Array};
 
 \subsubsection*{Example}
 \begin{lstlisting}
-int[][] twoDimArr = { {7, 4, 1} , 
+int[][] twoDimArr = { {7, 4, 1} ,
     				{2, 5, 9, 3} };
 
 System.out.println(twoDimArr[1][0]);
@@ -203,11 +216,13 @@ Using just one bracket will refer the whole array. E.g. array\_name[index]
 \section*{Other Resources}
 \begin{enumerate}
 
-\item The Java Tutorials (docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html)
+\item The Java Tutorials (docs.oracle.com/javase/tutorial/java/nutsandbolts/
+arrays.html)
 
-\item TutorialsPoint (www.tutorialspoint.com/java/java\_arrays.htm) 
+\item TutorialsPoint (www.tutorialspoint.com/java/java\_arrays.htm)
 
-\item Java Programming - WikiBooks (en.wikibooks.org/wiki/Java\_Programming/Arrays) 
+\item Java Programming - WikiBooks (en.wikibooks.org/wiki/Java\_Programming/
+Arrays)
 
 \item Princeton (introcs.cs.princeton.edu/java/14array)
 

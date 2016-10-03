@@ -1,18 +1,18 @@
 \documentclass[a4paper]{article}
 
-% Use Package
+% Packages
 \usepackage[english]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage[colorinlistoftodos]{todonotes}
-\usepackage{fontspec}
+\usepackage{helvet}
 \usepackage{geometry}
 \usepackage{layout}
 \usepackage{titling}
-\usepackage{listings}  
+\usepackage{listings}
 
-% Define Commands
+% Commands
 \newcommand{\subtitle}[1]{%
   \posttitle{%
     \par\end{center}
@@ -20,8 +20,9 @@
     \vskip0.5em}%
 }
 
-% Initial Set Up
-\setmainfont{Arial}
+\renewcommand{\familydefault}{\sfdefault}
+
+% Set Up
 \lstdefinestyle{codeStyle}{
   belowcaptionskip=1\baselineskip,
   breaklines=true,
@@ -35,38 +36,39 @@
   identifierstyle=\color{blue},
   stringstyle=\color{orange},
 }
-\lstset{ 
-  backgroundcolor=\color{white}, 
-  breakatwhitespace=false,         
-  breaklines=true,              
-  captionpos=b,                    
-  commentstyle=\color{green},    
-  deletekeywords={...},            
-  escapeinside={\%*}{*)},          
-  extendedchars=true,              
-  frame=single,	                 
-  keepspaces=true,                
-  keywordstyle=\color{blue},      
-  language=Java,                  
-  otherkeywords={*,...},           
-  numbers=left,                    
-  numbersep=5pt,                   
+\lstset{
+  backgroundcolor=\color{white},
+  breakatwhitespace=false,
+  breaklines=true,
+  captionpos=b,
+  commentstyle=\color{green},
+  deletekeywords={...},
+  escapeinside={\%*}{*)},
+  extendedchars=true,
+  frame=single,
+  keepspaces=true,
+  keywordstyle=\color{blue},
+  language=Java,
+  otherkeywords={*,...},
+  numbers=left,
+  numbersep=5pt,
   numberstyle=\color{gray},
-  rulecolor=\color{white},         
-  showspaces=false,             
-  showstringspaces=false,          
-  showtabs=false,                  
-  stepnumber=1 ,                    
-  stringstyle=\color{mauve},     
-  tabsize=2,	                   
-  title=\lstname,                   
+  rulecolor=\color{white},
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+  stepnumber=1,
+  stringstyle=\color{mauve},
+  tabsize=2,
+  title=\lstname,
   escapechar=@,
   style=codeStyle
 }
 
+% Document start
 \title{Control Flow Statements}
 \subtitle{Java Fundamentals}
-\date{} 
+\date{}
 \author{Libre Education}
 \begin{document}
 \maketitle
@@ -81,10 +83,12 @@
 
 \section*{Control Flow Statements}
 
-Control Flow Statements check a condition and then execute code based on the result of the condition.
+Control Flow Statements check a condition and then execute code based on the
+result of the condition.
 
 \section*{if Statement}
-The if Statement, commonly called the if-then statement, checks a condition and if the condition returns true, a block of code is executed.
+The if Statement, commonly called the if-then statement, checks a condition and
+if the condition returns true, a block of code is executed.
 
 \subsection*{Syntax}
 
@@ -107,7 +111,8 @@ if(i == 3){
 If the code to execute is only one statement the '\{ \}' can be omitted
 
 \section*{if-else Statement}
-The if-else statement also allows code to be executed if the condition returns false. If the statement returns false the else clause is executed.
+The if-else statement also allows code to be executed if the condition returns
+false. If the statement returns false the else clause is executed.
 
 \subsection*{Syntax}
 \begin{lstlisting}
@@ -163,7 +168,11 @@ if(i == 1){
 \end{lstlisting}
 
 \section*{switch Statement}
-A switch statement allows you to easily check multiple return values for a variable or expression, much like combining multiple if-else statements. The switch checks for equality between the variable or expression and the possible return value or ‘case’. It also has a ‘default’ clause for if none of the values are equal to the variable/expression.
+A switch statement allows you to easily check multiple return values for a
+variable or expression, much like combining multiple if-else statements.
+The switch checks for equality between the variable or expression and the
+possible return value or â€˜caseâ€™. It also has a â€˜defaultâ€™ clause for if none of
+the values are equal to the variable/expression.
 
 \subsection*{Syntax}
 \begin{lstlisting}
@@ -210,7 +219,8 @@ switch (i){
 The expression must evaluate to byte, short, char, int or String.
 
 \section*{Multiple Cases}
-If the same code needs to be executed for multiple cases, cases can be combined into the same statement.
+If the same code needs to be executed for multiple cases, cases can be combined
+into the same statement.
 
 \newpage
 
@@ -245,7 +255,9 @@ switch (i){
 \end{lstlisting}
 
 \section*{while Statement}
-The while statement will continue to execute a block of code while its condition returns true, so it can be considered as a loop. It will stop executing the code block when its condition returns false.
+The while statement will continue to execute a block of code while its condition
+returns true, so it can be considered as a loop. It will stop executing the code
+block when its condition returns false.
 
 \subsection*{Syntax}
 \begin{lstlisting}
@@ -273,7 +285,9 @@ Currently in loop 4
 \end{lstlisting}
 
 \section*{do-while Statement}
-The do-while statement is very similar to the while statement, the difference is that the condition is checked after the code is executed, meaning the code gets executed at least once.
+The do-while statement is very similar to the while statement, the difference is
+that the condition is checked after the code is executed, meaning the code gets
+executed at least once.
 
 \subsection*{Syntax}
 \begin{lstlisting}
@@ -298,7 +312,10 @@ Currently in loop 4
 \end{lstlisting}
 
 \section*{for Statement}
-The for statement provides a more efficient and structured way of looping. It allows you to initialize the variable that will be used to control looping, the condition and the operation that will be applied to the variable after each loop.
+The for statement provides a more efficient and structured way of looping. It
+allows you to initialize the variable that will be used to control looping, the
+condition and the operation that will be applied to the variable after each
+loop.
 
 \subsection*{Syntax}
 \begin{lstlisting}
@@ -321,7 +338,10 @@ Currently in loop 4
 \end{lstlisting}
 
 \section*{for each Statement}
-The for each statement, also called the optimized for statement, is a for statement that is enhanced to loop through arrays and Collections. It allows you to specify the element found in the array/collection and the array/collection that will be looped through. 
+The for each statement, also called the optimized for statement, is a for
+statement that is enhanced to loop through arrays and Collections. It allows you
+to specify the element found in the array/collection and the array/collection
+that will be looped through.
 
 \subsection*{Syntax}
 \begin{lstlisting}
@@ -348,7 +368,9 @@ Currently at number 4
 
 \section*{break Statement}
 
-When the break statement is called inside a loop, the loop is terminated and the program continues running directly after the loop. It is also used to terminate a case in the switch statement.
+When the break statement is called inside a loop, the loop is terminated and
+the program continues running directly after the loop. It is also used to
+terminate a case in the switch statement.
 
 \subsection*{Example}
 \begin{lstlisting}
@@ -368,7 +390,8 @@ Currently in loop 4
 
 \section*{continue Statement}
 
-The continue statement causes the loop to jump to the next step or iteration in the loop.
+The continue statement causes the loop to jump to the next step or iteration in
+the loop.
 
 \subsection*{Example}
 \begin{lstlisting}
@@ -390,19 +413,24 @@ Currently in loop 4
 \section*{Other Resources}
 \begin{enumerate}
 
-\item The Java Tutorials - (docs.oracle.com/javase/tutorial/java/nutsandbolts/if.html) 
+\item The Java Tutorials - (docs.oracle.com/javase/tutorial/java/nutsandbolts/
+if.html)
 
-\item TutorialsPoint - Decision Making (www.tutorialspoint.com/java/java\_decision\_making.htm)
+\item TutorialsPoint - Decision Making (www.tutorialspoint.com/java/java\_
+decision\_making.htm)
 
-\item TutorialsPoint - Loop Control (www.tutorialspoint.com/java/java\_loop\_control.htm)
+\item TutorialsPoint - Loop Control (www.tutorialspoint.com/java/java\_loop\_
+control.htm)
 
 \item ZetCode (zetcode.com/lang/java/flow)
 
 \item Udemy Blog (blog.udemy.com/for-each-loop-java)
 
-\item Java For Dummies - if Statements (www.dummies.com/how-to/content/how-to-use-if-statements-in-java.html)
+\item Java For Dummies - if Statements (www.dummies.com/how-to/content/how-to-
+use-if-statements-in-java.html)
 
-\item Java For Dummies - switch Statements (www.dummies.com/how-to/content/switch-statements-in-java.html) 
+\item Java For Dummies - switch Statements (www.dummies.com/how-to/content/
+switch-statements-in-java.html)
 
 \end{enumerate}
 
