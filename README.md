@@ -3,6 +3,7 @@ A collection of open source educational resources for Java written in Latex.
 
 ### [Java Fundamentals](https://github.com/LibreEducation/Java/tree/master/Java-Fundamentals)
 Introduces the core Java programming and general programming concepsts.
+
 1.  [Variables and Data Types](https://github.com/LibreEducation/Java/blob/master/Java-Fundamentals/01-variables-and-data-types.pdf)
 
 2.  [Operators](https://github.com/LibreEducation/Java/blob/master/Java-Fundamentals/02-operators.pdf)
