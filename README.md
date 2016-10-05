@@ -13,3 +13,5 @@ Introduces the core Java programming and general programming concepsts.
 4.  [Arrays](https://github.com/LibreEducation/Java/blob/master/Java-Fundamentals/04-arrays.pdf)
 
 5.  [Methods](https://github.com/LibreEducation/Java/blob/master/Java-Fundamentals/05-methods.pdf)
+
+6. [Objetcs and Classes](https://github.com/LibreEducation/Java/blob/master/Java-Fundamentals/06-objects-and-classes.pdf)
