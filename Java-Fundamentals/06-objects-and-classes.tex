@@ -1,0 +1,150 @@
+\documentclass[a4paper]{article}
+
+% Packages
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{helvet}
+\usepackage{geometry}
+\usepackage{layout}
+\usepackage{titling}
+\usepackage{listings}
+
+% Commands
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}%
+}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+% Set Up
+\lstdefinestyle{codeStyle}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  frame=L,
+  xleftmargin=\parindent,
+  language=Java,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{purple!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+}
+\lstset{
+  backgroundcolor=\color{white},
+  breakatwhitespace=false,
+  breaklines=true,
+  captionpos=b,
+  commentstyle=\color{green},
+  deletekeywords={...},
+  escapeinside={\%*}{*)},
+  extendedchars=true,
+  frame=single,
+  keepspaces=true,
+  keywordstyle=\color{blue},
+  language=Java,
+  otherkeywords={*,...},
+  numbers=left,
+  numbersep=5pt,
+  numberstyle=\color{gray},
+  rulecolor=\color{white},
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+  stepnumber=1,
+  stringstyle=\color{mauve},
+  tabsize=2,
+  title=\lstname,
+  escapechar=@,
+  style=codeStyle
+}
+
+% Document start
+\title{Objects and Classes}
+\subtitle{Java Fundamentals}
+\date{}
+\author{Libre Education}
+\begin{document}
+\maketitle
+
+
+\begin{figure}[b]
+\includegraphics{BY-SA}
+\centering
+\end{figure}
+
+\newpage
+
+\section*{Objects}
+
+\section*{Classes}
+A class is a blueprint or template from which objects can be created. The class defines information about the object such as its attributes.
+
+\subsection*{Structure of a Methods}
+The following are components of classes used to create objects:
+
+\begin{enumerate}
+
+\item Fields - also known as attributes, they provide space to store information about the object
+\item Methods - they will provide functionality to each object created from the class
+\item Constructor(s) - allow an instance or object of the class to be created and pass values to the object at initialization
+\item Mutators - methods that provide functionality to change attributes of the object, also known as setters
+\item Accessors - methods that provide functionality to retrieve attributes of the object, also known as getters
+\item Modifiers - includes the access and non-access modifiers
+
+\end{enumerate}
+
+
+\subsubsection*{Access Modifiers}
+
+Access Modifiers set the access level for a class or method. The access level essentially describes where the class can be called from. There are three types of access modifier:
+
+\begin{enumerate}
+
+\item Public (public) - accessible to the whole program
+\item Protected (protected) - accessible to the package and all sub classes
+\item Private (private) - accessible to the class only 
+
+\end{enumerate}
+
+\subsubsection*{Non-Access Modifiers}
+The non-access modifiers provide a set of miscellaneous functionality, which will be discussed at a later point:
+
+\begin{enumerate}
+\item Static (static)
+\item Final (final)
+\item Abstract (abstract)
+\item Synchronized (synchronized)
+\item Volatile (volatile)
+\end{enumerate}
+
+
+\subsection*{Types of Variables}
+Classes can contain three types of variable:
+
+\begin{enumerate}
+
+\item Local Variable - are variables declared inside a method. They are initialized when the method is called.
+\item Instance Variables - are variables declared in the class but outside any method. They are initialized when the class is instantiated.
+\item Class (Static) Variables -  are variables declared in the class but outside any method with the static modifier. Class variables do not belong to any instance of the class but belong to the class itself. Therefore only one instance of a static field can exist.
+
+\end{enumerate}
+
+\newpage
+
+\section*{Other Resources}
+\begin{enumerate}
+\item The Java Tutorials (docs.oracle.com/javase/tutorial/java/concepts/) (docs.oracle.com/javase/tutorial/java/concepts/object.html) 
+(docs.oracle.com/javase/tutorial/java/concepts/class.html) 
+\item Java2s (www.java2s.com/Tutorials/Java/Java\_Object\_Oriented\_Design/index.htm) 
+\item JavaWorld (www.javaworld.com/article/2075202/core-java/object-oriented-language-basics-part-1.html) 
+\end{enumerate}
+
+
+\end{document}	
